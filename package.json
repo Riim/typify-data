@@ -1,10 +1,11 @@
 {
   "name": "@riim/typify-data",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/typifyData.js",
+  "typings": "dist/typifyData.d.ts",
   "scripts": {
-    "build": "node_modules/.bin/rollup -c",
+    "build": "node_modules/.bin/tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,10 +19,6 @@
   },
   "homepage": "https://github.com/Riim/typify-data#readme",
   "devDependencies": {
-    "babel-plugin-transform-es2015-arrow-functions": "^6.8.0",
-    "babel-plugin-transform-es2015-block-scoping": "^6.15.0",
-    "babel-plugin-transform-es2015-computed-properties": "^6.8.0",
-    "rollup": "^0.36.1",
-    "rollup-plugin-babel": "^2.6.1"
+    "typescript": "^2.1.5"
   }
 }
