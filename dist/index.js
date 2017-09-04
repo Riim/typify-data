@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 function typifyData(data, types) {
     if (Array.isArray(data)) {
         data.forEach(function (item) {
@@ -9,7 +10,7 @@ function typifyData(data, types) {
         Object.keys(types).forEach(function (keypath) {
             var type = types[keypath];
             if (keypath == '') {
-                data['__type'] = type;
+                data.__type = type;
             }
             else {
                 var idx = keypath.indexOf('.');
@@ -23,7 +24,7 @@ function typifyData(data, types) {
                         typifyData(value, (_a = {}, _a[idx == -1 ? '' : keypath.slice(idx + 1)] = type, _a));
                     }
                     else if (idx == -1) {
-                        value['__type'] = type;
+                        value.__type = type;
                     }
                     else {
                         typifyData(value, (_b = {}, _b[keypath.slice(idx + 1)] = type, _b));
@@ -35,5 +36,4 @@ function typifyData(data, types) {
     }
     return data;
 }
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = typifyData;
+exports.typifyData = typifyData;
